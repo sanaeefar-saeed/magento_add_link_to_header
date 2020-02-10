@@ -1,0 +1,26 @@
+<?php
+
+declare(strict_types=1);
+
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Sana\CustomerAccount\ViewModel\StatusFormBlock $viewModel */
+$viewModel = $block->getViewModel();
+?>
+<form data-mage-init='{"validation":{}}'  action="<?= $block->escapeHtml($viewModel->getFormAction()) ?>" method="post">
+    <div class="field required">
+        <label for="customer_status_field" class="label">
+            <span>Status</span>
+        </label>
+        <div class="control">
+            <input type="text" name="customer_status" id="customer_status_field" class="input-text"
+                   data-validate="{required:true}" maxlength="20"/>
+        </div>
+    </div>
+    <div class="actions-toolbar">
+        <div class="primary cations-primary">
+            <button type="submit" class="action submit primary">
+                <span>Save</span>
+            </button>
+        </div>
+    </div>
+</form>

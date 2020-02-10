@@ -1,0 +1,23 @@
+<li class="customer-status" data-bind="scope: 'customer'">
+    <!-- ko if: customer().customerStatus  -->
+    <span data-bind="text: new String(
+        '<?= $block->escapeHtml(__(' %1 ')) ?>'
+        ).replace('%1', customer().customerStatus)">
+    </span>
+    <!-- /ko -->
+</li>
+
+
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "customer": {
+                            "component": "Magento_Customer/js/view/customer"
+                        }
+                    }
+                }
+            }
+        }
+</script>

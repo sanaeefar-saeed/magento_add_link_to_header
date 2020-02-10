@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="customer_account_navigation">
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="test-link">
+                <arguments>
+                    <argument name="path" xsi:type="string">status</argument>
+                    <argument name="label" xsi:type="string">Status Link</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceContainer name="header.panel">
+            <block class="Magento\Framework\View\Element\Template" name="header_status" as="header_status" after="header" template="Sana_CustomerAccount::html/header.phtml" />
+        </referenceContainer>
+        <move element="header_status" destination="header.links" after="header"/>
+    </body>
+</page>
